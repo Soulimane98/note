@@ -1,0 +1,121 @@
+/* Style for the body */
+body {
+  background-image: url("https://images.unsplash.com/photo-1557682224-5b8590cd9ec5");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Main container */
+.main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #279AF1;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Title styles */
+.title {
+  color: #333;
+  font-size: 38px;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Notes container with grid layout */
+.notes {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 900px) {
+  .notes {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .notes {
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+  }
+}
+
+/* Style for individual note */
+.note {
+  background: rgba(51, 51, 51, 0.9);
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.note:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer styles for the note */
+.note_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Textarea styles inside the note */
+.note textarea {
+  white-space: pre-wrap;
+  background: transparent;
+  border: none;
+  color: #fff;
+  resize: none;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.note textarea:focus {
+  outline: none;
+}
+
+.note textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Save button styles */
+.note_save {
+  background: transparent;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s;
+  border: 1.5px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.note_save:hover {
+  background: #fff;
+  color: #333;
+  transform: translateY(-2px);
+}
